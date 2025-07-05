@@ -1,3 +1,24 @@
+#!/bin/bash
+
+# CPP00-09の全MakefileをNew Styleで作り直すスクリプト
+
+for i in {00..09}; do
+    for ex in {00..02}; do
+        makefile_path="cpp${i}/ex${ex}/Makefile"
+        
+        # 各演習に応じたプログラム名を設定
+        if [ "$i" == "00" ]; then
+            case $ex in
+                00) program_name="megaphone" ;;
+                01) program_name="phonebook" ;;
+                02) program_name="account" ;;
+            esac
+        else
+            program_name="program"
+        fi
+        
+        # New Style Makefileを作成
+        cat > "$makefile_path" << EOF
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
@@ -14,7 +35,7 @@
 #> variables
 #-----------------------------------------------------------------------------
 
-NAME		:= phonebook
+NAME		:= ${program_name}
 
 #─ compile config ────────────────────────────────────────────────────────────
 
@@ -29,7 +50,7 @@ OBJDIR		:= obj
 
 SRCS		:= main.cpp
 
-OBJS		:= $(SRCS:%.cpp=$(OBJDIR)/%.o)
+OBJS		:= \$(SRCS:%.cpp=\$(OBJDIR)/%.o)
 
 #─ colors ────────────────────────────────────────────────────────────────────
 
@@ -44,27 +65,34 @@ BOLD		:= \033[1m
 #> rules
 #-----------------------------------------------------------------------------
 
-all: $(NAME)
+all: \$(NAME)
 
-$(NAME): $(OBJS)
-	@$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
-	@echo "$(GREEN)$(BOLD)========================================="
-	@echo "    $(NAME) created successfully!"
-	@echo "=========================================$(RESET)"
+\$(NAME): \$(OBJS)
+	@\$(CXX) \$(CXXFLAGS) -o \$@ \$(OBJS)
+	@echo "\$(GREEN)\$(BOLD)========================================="
+	@echo "    \$(NAME) created successfully!"
+	@echo "=========================================\$(RESET)"
 
-$(OBJDIR)/%.o: %.cpp
-	@mkdir -p $(OBJDIR)
-	@echo "Compiled ✅ $(WHITE)$(BOLD) $< $(RESET)"
-	@$(CXX) $(CXXFLAGS) -c -o $@ $<
+\$(OBJDIR)/%.o: %.cpp
+	@mkdir -p \$(OBJDIR)
+	@echo "Compiled ✅ \$(WHITE)\$(BOLD) \$< \$(RESET)"
+	@\$(CXX) \$(CXXFLAGS) -c -o \$@ \$<
 
 clean:
-	@rm -rf $(OBJDIR)
-	@echo "$(CYAN)Object files cleaned.$(RESET)"
+	@rm -rf \$(OBJDIR)
+	@echo "\$(CYAN)Object files cleaned.\$(RESET)"
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo "$(CYAN)$(NAME) removed.$(RESET)"
+	@rm -f \$(NAME)
+	@echo "\$(CYAN)\$(NAME) removed.\$(RESET)"
 
 re: fclean all
 
 .PHONY: all clean fclean re
+EOF
+        
+        echo "Created New Style Makefile for cpp${i}/ex${ex}"
+    done
+done
+
+echo "All CPP module Makefiles have been recreated in New Style!"

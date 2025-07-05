@@ -1,25 +1,69 @@
-NAME = program
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCDIR = .
-OBJDIR = obj
-SOURCES = main.cpp
-OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/07/05 15:45:00 by kei2003730        #+#    #+#              #
+#    Updated: 2025/07/05 15:45:00 by kei2003730       ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+#-----------------------------------------------------------------------------
+#> variables
+#-----------------------------------------------------------------------------
+
+NAME		:= program
+
+#─ compile config ────────────────────────────────────────────────────────────
+
+CXX			:= c++
+CXXFLAGS	:= -Wall -Wextra -Werror -std=c++98
+
+#─ directory name ────────────────────────────────────────────────────────────
+
+OBJDIR		:= obj
+
+#─ sources & objects ─────────────────────────────────────────────────────────
+
+SRCS		:= main.cpp
+
+OBJS		:= $(SRCS:%.cpp=$(OBJDIR)/%.o)
+
+#─ colors ────────────────────────────────────────────────────────────────────
+
+GREEN		:= \033[32m
+YELLOW		:= \033[33m
+CYAN		:= \033[36m
+WHITE		:= \033[37m
+RESET		:= \033[0m
+BOLD		:= \033[1m
+
+#-----------------------------------------------------------------------------
+#> rules
+#-----------------------------------------------------------------------------
 
 all: $(NAME)
 
-$(NAME): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJECTS)
+$(NAME): $(OBJS)
+	@$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
+	@echo "$(GREEN)$(BOLD)========================================="
+	@echo "    $(NAME) created successfully!"
+	@echo "=========================================$(RESET)"
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+$(OBJDIR)/%.o: %.cpp
 	@mkdir -p $(OBJDIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@echo "Compiled ✅ $(WHITE)$(BOLD) $< $(RESET)"
+	@$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 clean:
-	rm -rf $(OBJDIR)
+	@rm -rf $(OBJDIR)
+	@echo "$(CYAN)Object files cleaned.$(RESET)"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "$(CYAN)$(NAME) removed.$(RESET)"
 
 re: fclean all
 
