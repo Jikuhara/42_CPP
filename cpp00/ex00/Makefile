@@ -6,7 +6,7 @@
 #    By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:45:00 by kei2003730        #+#    #+#              #
-#    Updated: 2025/07/05 16:43:57 by kei2003730       ###   ########.fr        #
+#    Updated: 2025/07/05 16:46:25 by kei2003730       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,28 +79,4 @@ leak: $(NAME)
 	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) "test string"
 	@echo "$(GREEN)$(BOLD)Leak check completed!$(RESET)"
 
-# リークチェック
-leak: $(NAME)
-	@echo "$(MAGENTA)$(BOLD)========================================="
-	@echo "    Checking Memory Leaks..."
-	@echo "=========================================$(RESET)"
-	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) "test string"
-	@echo "$(GREEN)$(BOLD)Leak check completed!$(RESET)"
-
-# リークチェック
-leak: $(NAME)
-	@echo "$(MAGENTA)$(BOLD)========================================="
-	@echo "    Checking Memory Leaks..."
-	@echo "=========================================$(RESET)"
-	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(NAME) "test string"
-	@echo "$(GREEN)$(BOLD)Leak check completed!$(RESET)"
-
-# リークチェック
-leak: $(NAME)
-	@echo "$(MAGENTA)$(BOLD)========================================="
-	@echo "    Checking Memory Leaks..."
-	@echo "=========================================$(RESET)"
-	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) "test string"
-	@echo "$(GREEN)$(BOLD)Leak check completed!$(RESET)"
-
-.PHONY: all clean fclean re leak leak leak leak
+.PHONY: all clean fclean re leak
