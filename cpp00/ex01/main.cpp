@@ -1,6 +1,21 @@
-#include <iostream>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/05 22:04:33 by kei2003730        #+#    #+#             */
+/*   Updated: 2025/07/05 22:05:29 by kei2003730       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+#include "PhoneBook.hpp"
+
+int main(void)
+{
+	PhoneBook phonebook;
+
+	phonebook.init_phonebook();
+	return 0;
 }

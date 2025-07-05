@@ -6,7 +6,7 @@
 /*   By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 19:13:37 by kei2003730        #+#    #+#             */
-/*   Updated: 2025/07/05 21:50:20 by kei2003730       ###   ########.fr       */
+/*   Updated: 2025/07/05 22:05:53 by kei2003730       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ void Contact::print_contact(void)
 	std::cout << "Darkest secret: " << this->darkest_secret << std::endl;
 }
 
-int	main(int argc, char const *argv[])
-{
-	Contact	contact;
+// int	main(int argc, char const *argv[])
+// {
+// 	Contact	contact;
 
-	contact.set_contact_info();
-	contact.print_contact();
-	return (0);
-}
+// 	contact.set_contact_info();
+// 	contact.print_contact();
+// 	return (0);
+// }
