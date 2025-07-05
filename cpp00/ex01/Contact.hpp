@@ -6,7 +6,7 @@
 /*   By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 19:03:54 by kei2003730        #+#    #+#             */
-/*   Updated: 2025/07/05 19:07:44 by kei2003730       ###   ########.fr       */
+/*   Updated: 2025/07/05 19:17:30 by kei2003730       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Contact
 {
-	private:
+	public:
 	std::string	first_name;
 	std::string	last_name;
 	std::string	nickname;

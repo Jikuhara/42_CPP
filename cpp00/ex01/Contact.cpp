@@ -6,11 +6,20 @@
 /*   By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 19:13:37 by kei2003730        #+#    #+#             */
-/*   Updated: 2025/07/05 19:16:53 by kei2003730       ###   ########.fr       */
+/*   Updated: 2025/07/05 19:19:17 by kei2003730       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+
+void	init_contact(Contact contact)
+{
+	contact.first_name = "init data";
+	contact.last_name = "init data";
+	contact.nickname = "init data";
+	contact.phone_number = "init data";
+	contact.darkest_secret = "init data";
+}
 
 void	add_contact(void)
 {}
@@ -24,3 +33,13 @@ void	print_contact(Contact contact)
 	std::cout << contact.phone_number << std::endl;
 	std::cout << contact.darkest_secret << std::endl;
 }
+
+int main(int argc, char const *argv[])
+{
+	Contact contact;
+
+	init_contact(contact);
+	print_contact(contact);
+	return 0;
+}
+
