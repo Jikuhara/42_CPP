@@ -129,3 +129,9 @@ PhoneBookにcontactを認識させるにはどうしたら良いんやろ。
 入力機構分からんすぎ。
 [CPPの入力について](https://www.w3schools.com/cpp/cpp_input_validation.asp)
 わかりやすいこれ。
+
+分からんすぎるし、Githubを探索。
+[github anurtiagさんのCPP00](https://github.com/anurtiag/cpp00/blob/main/ex01/Contact.cpp)
+10個ぐらい調べた。これが一番分かりやすい。
+
+なるほど。Privateは中から参照すれば良いのか。

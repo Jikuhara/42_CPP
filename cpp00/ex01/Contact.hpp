@@ -6,7 +6,7 @@
 /*   By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 19:03:54 by kei2003730        #+#    #+#             */
-/*   Updated: 2025/07/05 19:17:30 by kei2003730       ###   ########.fr       */
+/*   Updated: 2025/07/05 19:47:57 by kei2003730       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,23 @@
 
 class Contact
 {
+	private:
+		std::string	first_name;
+		std::string	last_name;
+		std::string	nickname;
+		std::string	phone_number;
+		std::string	darkest_secret;
 	public:
-	std::string	first_name;
-	std::string	last_name;
-	std::string	nickname;
-	std::string	phone_number;
-	std::string	darkest_secret;
+		void	print_contact(Contact contact);
+
+		Contact()
+		{
+			first_name = "init data";
+			last_name = "init data";
+			nickname = "init data";
+			phone_number = "init data";
+			darkest_secret = "init data";
+		}
 };
 
 #endif

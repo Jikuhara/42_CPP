@@ -6,21 +6,11 @@
 /*   By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 19:13:37 by kei2003730        #+#    #+#             */
-/*   Updated: 2025/07/05 19:39:36 by kei2003730       ###   ########.fr       */
+/*   Updated: 2025/07/05 19:48:07 by kei2003730       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-
-// てかこの初期化、コンストラクターで出来るやん。
-void	init_contact(Contact *contact)
-{
-	contact->first_name = "init data";
-	contact->last_name = "init data";
-	contact->nickname = "init data";
-	contact->phone_number = "init data";
-	contact->darkest_secret = "init data";
-}
 
 Contact	new_contact(void)
 {
@@ -39,8 +29,8 @@ Contact	new_contact(void)
 	return (contact);
 }
 
-// え、これPrivateじゃ無理じゃね。。。
-void	print_contact(Contact contact)
+// え、これPrivateじゃ無理じゃね。。。→解決
+void	Contact::print_contact(Contact contact)
 {
 	std::cout << contact.first_name << std::endl;
 	std::cout << contact.last_name << std::endl;
