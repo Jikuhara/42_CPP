@@ -6,24 +6,24 @@
 /*   By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 19:13:37 by kei2003730        #+#    #+#             */
-/*   Updated: 2025/07/05 20:00:34 by kei2003730       ###   ########.fr       */
+/*   Updated: 2025/07/05 21:50:20 by kei2003730       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-void Contact::new_contact(void)
+void Contact::set_contact_info(void)
 {
 	std::cout << "Please enter a first name: " << std::endl;
-	getline(std::cin, first_name);
+	getline(std::cin, this->first_name);
 	std::cout << "Please enter a last name: " << std::endl;
-	getline(std::cin, last_name);
+	getline(std::cin, this->last_name);
 	std::cout << "Please enter a nickname: " << std::endl;
-	getline(std::cin, nickname);
+	getline(std::cin, this->nickname);
 	std::cout << "Please enter a phone number: " << std::endl;
-	getline(std::cin, phone_number);
+	getline(std::cin, this->phone_number);
 	std::cout << "Please enter a darkest secret: " << std::endl;
-	getline(std::cin, darkest_secret);
+	getline(std::cin, this->darkest_secret);
 }
 
 void Contact::print_contact(void)
@@ -39,7 +39,7 @@ int	main(int argc, char const *argv[])
 {
 	Contact	contact;
 
-	contact.new_contact();
+	contact.set_contact_info();
 	contact.print_contact();
 	return (0);
 }
