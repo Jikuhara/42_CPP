@@ -6,7 +6,7 @@
 #    By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/05 15:45:00 by kei2003730        #+#    #+#              #
-#    Updated: 2025/07/05 16:39:33 by kei2003730       ###   ########.fr        #
+#    Updated: 2025/07/05 16:43:57 by kei2003730       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,10 @@ GREEN		:= \033[32m
 YELLOW		:= \033[33m
 CYAN		:= \033[36m
 WHITE		:= \033[37m
+MAGENTA		:= \033[35m
+MAGENTA		:= \033[35m
+MAGENTA		:= \033[35m
+MAGENTA		:= \033[35m
 RESET		:= \033[0m
 BOLD		:= \033[1m
 
@@ -67,4 +71,36 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+# リークチェック
+leak: $(NAME)
+	@echo "$(MAGENTA)$(BOLD)========================================="
+	@echo "    Checking Memory Leaks..."
+	@echo "=========================================$(RESET)"
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) "test string"
+	@echo "$(GREEN)$(BOLD)Leak check completed!$(RESET)"
+
+# リークチェック
+leak: $(NAME)
+	@echo "$(MAGENTA)$(BOLD)========================================="
+	@echo "    Checking Memory Leaks..."
+	@echo "=========================================$(RESET)"
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) "test string"
+	@echo "$(GREEN)$(BOLD)Leak check completed!$(RESET)"
+
+# リークチェック
+leak: $(NAME)
+	@echo "$(MAGENTA)$(BOLD)========================================="
+	@echo "    Checking Memory Leaks..."
+	@echo "=========================================$(RESET)"
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(NAME) "test string"
+	@echo "$(GREEN)$(BOLD)Leak check completed!$(RESET)"
+
+# リークチェック
+leak: $(NAME)
+	@echo "$(MAGENTA)$(BOLD)========================================="
+	@echo "    Checking Memory Leaks..."
+	@echo "=========================================$(RESET)"
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) "test string"
+	@echo "$(GREEN)$(BOLD)Leak check completed!$(RESET)"
+
+.PHONY: all clean fclean re leak leak leak leak

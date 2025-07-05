@@ -37,6 +37,7 @@ GREEN		:= \033[32m
 YELLOW		:= \033[33m
 CYAN		:= \033[36m
 WHITE		:= \033[37m
+MAGENTA		:= \033[35m
 RESET		:= \033[0m
 BOLD		:= \033[1m
 
@@ -67,4 +68,12 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+# リークチェック
+leak: $(NAME)
+	@echo "$(MAGENTA)$(BOLD)========================================="
+	@echo "    Checking Memory Leaks..."
+	@echo "=========================================$(RESET)"
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) "test string"
+	@echo "$(GREEN)$(BOLD)Leak check completed!$(RESET)"
+
+.PHONY: all clean fclean re leak
