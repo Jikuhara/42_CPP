@@ -1,9 +1,9 @@
-NAME = program
+NAME = megaphone
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCDIR = .
 OBJDIR = obj
-SOURCES = main.cpp
+SOURCES = megaphone.cpp
 OBJECTS = $(SOURCES:%.cpp=$(OBJDIR)/%.o)
 
 all: $(NAME)
