@@ -20,4 +20,5 @@ int	main(int argc, char const *argv[])
 			std::cout << static_cast<unsigned char>(std::toupper(arg[j]));
 		}
 	}
+		std::cout << std::endl;
 }
