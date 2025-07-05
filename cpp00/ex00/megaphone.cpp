@@ -18,7 +18,7 @@ int	main(int argc, char const *argv[])
 		std::cout << arg << std::endl;
 		for (size_t j = 0; j < arg.size(); j++)
 		{
-			std::cout << std::toupper(arg[j]);
+			std::cout << static_cast<unsigned char>(std::toupper(arg[j]));
 		}
 		std::cout << std::endl;
 	}
