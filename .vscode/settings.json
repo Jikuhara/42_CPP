@@ -10,9 +10,6 @@
     // 行末の空白をハイライト
     "editor.renderFinalNewline": "on",
 
-    // 行の最後にある空白を自動で削除
-    "files.trimTrailingWhitespace": true,
-
     // ファイル保存時に最後に改行を挿入
     "files.insertFinalNewline": true,
 
@@ -24,7 +21,16 @@
     "[c]": {
         "editor.tabSize": 4,
         "editor.insertSpaces": false,
-        "editor.detectIndentation": false
+        "editor.detectIndentation": false,
+		// 行の最後にある空白を自動で削除
+        "files.trimTrailingWhitespace": true,
+    },
+    "[cpp]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": false,
+        "editor.detectIndentation": false,
+		// 行の最後にある空白を自動で削除
+        "files.trimTrailingWhitespace": true,
     },
 
     // Makefileの設定（タブが必須）
@@ -33,6 +39,8 @@
         "editor.detectIndentation": false
 	},
 	"files.associations": {
-		"string": "cpp"
+		"string": "cpp",
+		"iostream": "cpp",
+		"iosfwd": "cpp"
 	}
 }
