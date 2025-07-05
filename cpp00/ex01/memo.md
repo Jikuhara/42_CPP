@@ -97,3 +97,26 @@ Listningの練習にもなるし、見ておいて損はないけど、だるい
 [CPP00-04についての解説](https://haglobah.github.io/Mastering-42/holy_graph/cpp00-04.html)
 てかNormないからWild Card使えるんやな。
 CPP00 ex02は後回しが良いらしい。OK~。
+
+w3schoolでクラスについて学習している。
+[CPPのクラスについて](https://www.w3schools.com/cpp/cpp_classes.asp)
+クラスの所感。
+要素に対する演算（関数）をまとめたもの。
+例えば、自然数と足し算みたいな。
+それを外側から見れるようにするのが、Public,逆がPrivate。
+
+今回は、Contactに、
+5つのフィールド（first name, last name, nickname, phone number, darkest secret）を持たせる。
+
+それをPhoneBookに8つまで保存できるようにする。
+PhoneBookにcontactを認識させるにはどうしたら良いんやろ。
+
+てか、Contactの方は簡単に作れそう。
+
+#### コンストラクター
+クラスで同じ名前の関数を定義すると、コンストラクターになる。
+コンストラクターは、クラスのオブジェクトが生成されるときに自動的に呼び出される。
+これめっちゃ便利そうやん。
+毎回初期化する必要がないのあつい。
+
+できそう！！
