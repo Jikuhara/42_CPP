@@ -96,6 +96,7 @@ Listningの練習にもなるし、見ておいて損はないけど、だるい
 
 [CPP00-04についての解説](https://haglobah.github.io/Mastering-42/holy_graph/cpp00-04.html)
 てかNormないからWild Card使えるんやな。
+→ General Ruleにあかんって書いてあるやん！！
 CPP00 ex02は後回しが良いらしい。OK~。
 
 w3schoolでクラスについて学習している。
@@ -135,3 +136,11 @@ PhoneBookにcontactを認識させるにはどうしたら良いんやろ。
 10個ぐらい調べた。これが一番分かりやすい。
 
 なるほど。Privateは中から参照すれば良いのか。
+
+getlineバグりそ－－－。
+中身みたいなぁ。
+[CPPのgetlineについて](https://www.w3schools.com/cpp/cpp_files_input_output.asp)
+getlineは、cinと違って、空白を含む文字列を読み込むことができる。
+getlineは、文字列の終端を改行文字で判断する。
+つまり、改行が入力されるまで、文字列を読み込む。
+
