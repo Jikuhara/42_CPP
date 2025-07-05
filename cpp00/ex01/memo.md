@@ -125,3 +125,7 @@ PhoneBookにcontactを認識させるにはどうしたら良いんやろ。
 
 こっからなにするんやーー。
 とりあえず、Contactを入力・出力する関数を作成するか。
+
+入力機構分からんすぎ。
+[CPPの入力について](https://www.w3schools.com/cpp/cpp_input_validation.asp)
+わかりやすいこれ。
