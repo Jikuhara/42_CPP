@@ -6,7 +6,7 @@
 /*   By: kei2003730 <kei2003730@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/05 21:51:28 by kei2003730        #+#    #+#             */
-/*   Updated: 2025/07/05 22:07:50 by kei2003730       ###   ########.fr       */
+/*   Updated: 2025/07/05 22:14:43 by kei2003730       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	PhoneBook::init_phonebook()
 		if (input_command == "ADD")
 		{
 			std::cout << "You enter ADD." << std::endl;
-
+			this->contacts[index].set_contact_info();
 		}
 		else if (input_command == "SEARCH")
 		{
