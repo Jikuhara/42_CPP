@@ -58,6 +58,8 @@ void PhoneBook::init_phonebook()
 	std::string input_command;
 	while (1)
 	{
+		if(std::cin.eof())// Ctrl-Dが押されたか判定　　これがないと入力が閉じられた時に無限ループしてしまう
+			std::exit(1); //理想はmainでexitすると良い　クラス内の場合デストラクタを呼び出さずに処理を終了するため
 		std::cout << "Please enter ADD, SEARCH, or EXIT: ";
 		getline(std::cin, input_command);
 		if (input_command == "ADD")
